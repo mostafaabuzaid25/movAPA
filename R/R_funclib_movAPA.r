@@ -20,6 +20,7 @@
 library(GenomicRanges, verbose = FALSE)
 library(data.table, verbose = FALSE)
 library(ggplot2, verbose = FALSE)
+library(RColorBrewer)
 NULL
 
 options(stringsAsFactors=F)
@@ -1252,7 +1253,7 @@ setMethod("movStat", signature="PACdataset", def=function(object, minPAT=c(1,5,1
 )
 
 pal="paired"
-scale_fill_manual(values = color_palette)
+scale_fill_manual(values = pal)
 stat_plot_theme<- scale_fill_manual(values = pal)+ggplot2::theme_bw() + ggplot2::theme(
   #text=element_text(family="Arial"),
   axis.title.x =ggplot2::element_text(color="black",size=16) ,
