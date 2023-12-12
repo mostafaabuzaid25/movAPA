@@ -15,6 +15,11 @@
 #' @importFrom utils combn read.table write.csv write.table
 #' @importClassesFrom Matrix dgCMatrix dgeMatrix
 #' @importFrom utils head
+
+## from .r script ##
+library(GenomicRanges, verbose = FALSE)
+library(data.table, verbose = FALSE)
+library(ggplot2, verbose = FALSE)
 NULL
 
 options(stringsAsFactors=F)
