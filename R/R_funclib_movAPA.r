@@ -1254,7 +1254,7 @@ setMethod("movStat", signature="PACdataset", def=function(object, minPAT=c(1,5,1
 
 pal="paired"
 scale_fill_manual(values = pal)
-stat_plot_theme<- scale_fill_manual(values = pal)+ggplot2::theme_bw() + ggplot2::theme(
+stat_plot_theme <- ggplot2::theme_bw() + ggplot2::theme(
   #text=element_text(family="Arial"),
   axis.title.x =ggplot2::element_text(color="black",size=16) ,
   axis.title.y =ggplot2::element_text(color="black",size=16) ,
@@ -1268,6 +1268,7 @@ stat_plot_theme<- scale_fill_manual(values = pal)+ggplot2::theme_bw() + ggplot2:
   panel.grid.minor = ggplot2::element_blank(),
   strip.text = ggplot2::element_text(size=14)
   )
+stat_plot_theme <- list(stat_plot_theme,scale_fill_manual(values = pal))	   
 
 ## gene model without background
 viz_geneModel_theme<- ggplot2::theme_bw() + ggplot2::theme(
