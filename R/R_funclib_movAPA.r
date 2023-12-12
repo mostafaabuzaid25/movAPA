@@ -1387,7 +1387,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
   p=ggplot(d, aes(x = cond, y=nPAC, fill=cond)) + ggplot2::geom_bar(stat="identity") +
     geom_text(aes(label=nPAC), vjust=-0.2,col="black",size=4) +
     ylab('Number of PACs')+ xlab('Condition') + ggtitle("Number of PACs") + guides(fill=FALSE) +
-    facet_wrap( ~ minPAT, ncol=2) + stat_plot_theme
+    facet_wrap( ~ minPAT, ncol=2) + stat_plot_theme+ theme(axis.text.x  = element_text(angle=90, vjust=0.5))
   print(p)
   cat('Plot Number of PACs\n')
 
@@ -1396,7 +1396,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
   p=ggplot(d, aes(x = cond, y=nPAT, fill=cond)) + ggplot2::geom_bar(stat="identity") +
     geom_text(aes(label=sprintf("%d", nPAT)), vjust=-0.2, col="black",size=4) +
     ylab('Number of PATs')+ xlab('Condition') + ggtitle("Number of PATs")  + guides(fill=FALSE) +
-    facet_wrap( ~ minPAT, ncol=2) + stat_plot_theme
+    facet_wrap( ~ minPAT, ncol=2) + stat_plot_theme+ theme(axis.text.x  = element_text(angle=90, vjust=0.5))
   print(p)
   cat('Plot Number of PATs\n')
 
@@ -1412,7 +1412,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
     ggplot2::geom_bar(stat="identity")  +
     geom_text(aes(label=APAextent), vjust=-0.2, col="black",size=4) +
     ylab('Number of genes')+ xlab('Condition') + ggtitle("APA extent")  +
-    facet_wrap( ~ minPAT, ncol=2) + stat_plot_theme
+    facet_wrap( ~ minPAT, ncol=2) + stat_plot_theme + theme(axis.text.x  = element_text(angle=90, vjust=0.5))
   print(p)
   cat('Plot APA extent\n')
 
@@ -1422,8 +1422,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
   d=melt(d, id.vars = c('cond','minPAT'), value.name = 'nPAC', variable.name = 'region')
   p=ggplot(d, aes(x = region, y=nPAC, fill=cond)) + ggplot2::geom_bar(stat="identity", position=position_dodge()) +
     ylab('Number of PACs')+ xlab('Region') + ggtitle("PAC# distribution")  +
-    stat_plot_theme +
-    theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
+    stat_plot_theme + theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
     facet_wrap( ~ minPAT, ncol=2)
   print(p)
   cat('Plot PAC# distribution\n')
@@ -1435,8 +1434,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
   d=melt(d, id.vars = c('cond','minPAT'), value.name = 'nPAC', variable.name = 'region')
   p=ggplot(d, aes(x = region, y=nPAC, fill=cond)) + ggplot2::geom_bar(stat="identity", position=position_dodge()) +
     ylab('PACs%')+ xlab('Region') + ggtitle("PAC% distribution")  +
-    stat_plot_theme +
-    theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
+    stat_plot_theme + theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
     facet_wrap( ~ minPAT, ncol=2)
   print(p)
   cat('Plot PAC% distribution\n')
@@ -1447,8 +1445,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
   d=melt(d, id.vars = c('cond','minPAT'), value.name = 'nPAT', variable.name = 'region')
   p=ggplot(d, aes(x = region, y=nPAT, fill=cond)) + ggplot2::geom_bar(stat="identity", position=position_dodge()) +
     ylab('Number of PATs')+ xlab('Region') + ggtitle("PAT distribution")  +
-    stat_plot_theme +
-    theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
+    stat_plot_theme + theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
     facet_wrap( ~ minPAT, ncol=2)
   print(p)
   cat('Plot PAT# distribution\n')
@@ -1460,8 +1457,7 @@ plotPACdsStat <- function(pstats, pdfFile=NULL, minPAT=NULL, conds=NULL, ...) {
   d=melt(d, id.vars = c('cond','minPAT'), value.name = 'nPAT', variable.name = 'region')
   p=ggplot(d, aes(x = region, y=nPAT, fill=cond)) + ggplot2::geom_bar(stat="identity", position=position_dodge()) +
     ylab('PATs%')+ xlab('Region') + ggtitle("PAT distribution (%)")  +
-    stat_plot_theme +
-    theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
+    stat_plot_theme + theme(axis.text.x  = element_text(angle=90, vjust=0.5)) +
     facet_wrap( ~ minPAT, ncol=2)
   print(p)
   cat('Plot PAT% distribution\n')
