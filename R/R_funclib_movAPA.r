@@ -1252,7 +1252,7 @@ setMethod("movStat", signature="PACdataset", def=function(object, minPAT=c(1,5,1
 }
 )
 
-pal="paired"
+pal=brewer.pal(8, "Paired")
 scale_fill_manual(values = pal)
 stat_plot_theme <- ggplot2::theme_bw() + ggplot2::theme(
   #text=element_text(family="Arial"),
