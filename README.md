@@ -36,7 +36,7 @@ G. Rich functions are provided for the visualization of poly(A) site distributio
 ```
 install.packages("devtools")
 require(devtools)
-install_github("BMILAB/movAPA")
+install_github("mostafaabuzaid25/movAPA")
 library(movAPA)
 browseVignettes('movAPA')
 
